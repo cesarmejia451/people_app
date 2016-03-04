@@ -1,0 +1,18 @@
+<div ng-app="app">
+  <div ng-controller="peopleCtrl">
+    <h2>People Directory {{ peoples.length }}</h2>
+    <div>
+      <ul>
+        <li ng-repeat="people in peoples" ng-click="">
+            <p ng-click="toggleVisible(people)">Name: {{ people.name }}</p>
+            <p ng-if="people.bioVisible">Bio: {{ people.bio }}</p>
+          <br>
+        </li>
+      </ul> 
+    </div>
+    Name: <input ng-model="newPeopleName">
+    Bio: <input ng-model="newPeopleBio">
+    <br>
+    <button ng-click="addPeople(newPeopleName, newPeopleBio)">Add People</button>
+  </div>
+</div>
